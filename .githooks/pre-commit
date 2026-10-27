@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Runs the fast half of the test gate. Defined in build-logic/.../gate/TestGatePlugin.kt (task testGateExistence).
+cd "$(git rev-parse --show-toplevel)"
+if ! ./gradlew -q testGateExistence --offline; then
+  echo >&2 "
+Commit blocked by .githooks/pre-commit (test gate). Read the message above:
+add the missing tests, or add a justified waiver to test-waivers.yml. See docs/TEST_GATE.md"
+  exit 1
+fi

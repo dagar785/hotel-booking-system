@@ -1,0 +1,14 @@
+# Test gate configuration. Logic: build-logic/.../gate/TestGatePlugin.kt, docs: docs/TEST_GATE.md
+baseRef: baseline            # only code changed since this tag/branch is judged
+minChangedLineCoverage: 80   # % of changed executable lines that unit tests must execute
+# Files never gated. Android UI entry points are verified by instrumented/UI tests, which this gate does not run.
+exclude:
+  - "**/di/**"
+  - "**/*Module.kt"
+  - "**/*Dto.kt"
+  - "**/*Screen.kt"
+  - "**/*Activity.kt"
+  - "**/*Application.kt"
+  - "**/build/**"
+  - "core/testing/**"   # shared test fixtures
+  - "build-logic/**"   # build infrastructure; gate logic has its own tests in build-logic/src/test

@@ -1,0 +1,7 @@
+<resources>
+    <string name="booking_title">Complete your booking</string>
+    <string name="guest_name">Full name</string>
+    <string name="guest_email">Email</string>
+    <string name="card_number">Card number</string>
+    <string name="pay">Pay now</string>
+</resources>

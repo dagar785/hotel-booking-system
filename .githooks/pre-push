@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Runs the full test gate (existence + changed-line coverage) before pushing.
+cd "$(git rev-parse --show-toplevel)"
+if ! ./gradlew -q testGate --offline; then
+  echo >&2 "
+Push blocked by .githooks/pre-push (test gate). Read the message above and see docs/TEST_GATE.md"
+  exit 1
+fi

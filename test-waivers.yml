@@ -1,0 +1,7 @@
+# Waive the test requirement for a changed production file. Every entry needs a real reason.
+# category: GENERATED | TRIVIAL_WRAPPER | UI_COVERED_ELSEWHERE | TIME_BOXED
+# Example:
+#  - path: feature/booking/src/main/kotlin/com/hbs/feature/booking/Foo.kt
+#    category: TRIVIAL_WRAPPER
+#    reason: "Thin delegate with no branching; exercised through BookingViewModelTest."
+[]
